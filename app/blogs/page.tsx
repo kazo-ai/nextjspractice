@@ -1,0 +1,27 @@
+import axios from "axios";
+
+
+async function getBlogs() {
+  const response = await axios.get("https://jsonplaceholder.typicode.com/posts")
+  return response.data;
+}
+
+export default async function Home() {
+  const blogs = await getBlogs();
+  return (
+    <div>
+      {blogs.map((blog:iTodo)=><Todos title={blog.title} completed={blog.completed}/>)}
+    </div>
+  
+  );
+}
+interface iTodo{
+    title:string,
+    completed:boolean
+  }
+  function Todos({title,completed}:iTodo){
+    return(
+      <div>
+        {title} {completed ? "done" : "notdone"}
+      </div>)
+  }
