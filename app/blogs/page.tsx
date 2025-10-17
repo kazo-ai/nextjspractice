@@ -22,6 +22,6 @@ interface iTodo{
   function Todos({title,completed}:iTodo){
     return(
       <div>
-        {title} {completed ? "done" : "notdone"}
+        {title} {completed ? "done?" : "notdone"}
       </div>)
   }
