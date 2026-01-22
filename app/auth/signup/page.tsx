@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-        sign up page
+        sign up page 
               </div>
   );
 }
